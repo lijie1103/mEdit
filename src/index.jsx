@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 
 ReactDOM.render(
     <div>
-        demo
+        demo4
     </div>,
     document.body
 );
