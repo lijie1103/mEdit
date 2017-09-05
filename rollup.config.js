@@ -5,11 +5,12 @@ import babel from 'rollup-plugin-babel';
 import uglify from 'rollup-plugin-uglify';
 
 export default {
-    entry: 'src/index.jsx',
-    dest: 'dist/js/index.min.js',
-    format: 'iife',
-    moduleName: 'preact-widget',
-    // moduleId: 'preact-widget',
+    input: 'src/index.jsx',
+    output: {
+        format: 'iife',
+        file: 'dist/js/index.min.js',
+    },
+    name: 'preactWidget',
     sourceMap: false,
     treeshake: true,
     plugins: [
