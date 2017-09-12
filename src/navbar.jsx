@@ -4,73 +4,131 @@ class Navbar extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            show: ''
+            show: 0,
         }
     }
-    showList() {
-        console.log('object');
+    //全选
+    selectAll() {
+        document.execCommand('SelectAll');
+    }
+    //撤销操作
+    undo() {
+        document.execCommand('undo');
+    }
+    //重做被撤销的操作
+    redo() {
+        document.execCommand('redo');
+    }
+    //设置样式
+    setting(e) {
+        var command = e.target.getAttribute('title')
+        var val = e.target.getAttribute('value')
+        if (!val) {
+            val = null
+        }
+        document.execCommand(command, false, val);
+        this.setState({
+            show: 0
+        })
+    }
+    showList(e) {
+        let state = e.currentTarget.getAttribute('target')
+        this.setState({
+            show: state
+        })
+    }
+    getVal() {
+        console.log(this.refs.content.innerHTML);
+    }
+
+    // handle(e) {
+    //     console.log(e.target.innerHTML);
+    //     this.setState({
+    //         html: e.target.innerHTML
+    //     })
+    // }
+    renderNavbar() {
+        if (!this.state.show) {
+            return (
+                <div class="edit-navbar" id="edit-navbar">
+                    <div>
+                        <a class="choose-all" onclick={this.selectAll.bind(this)} href="javascript:;">全选</a>
+                        <a class="do-last" onclick={this.undo.bind(this)} href="javascript:;"></a>
+                        <a class="do-next" onclick={this.redo.bind(this)} href="javascript:;"></a>
+                    </div>
+                    <div>
+                        <a class="font1" target='font-style' onclick={this.showList.bind(this)} href="javascript:;"></a>
+                        <a class="font2" target='font-size' onclick={this.showList.bind(this)} href="javascript:;"></a>
+                        <a class="font-align" target='font-align' onclick={this.showList.bind(this)} href="javascript:;"></a>
+                        <a class="font-color" target='font-color' onclick={this.showList.bind(this)} href="javascript:;"></a>
+                    </div>
+
+                </div>
+            )
+        }
     }
     renderFont1() {
-        return (
-            <div class="edit-navbar edit-navbar-child hide" id='font-style'>
-                <div>
-                    <a class="font-style" href="javascript:;">B</a>
-                    <a class="font-style" href="javascript:;">I</a>
-                    <a class="font-style" href="javascript:;">U</a>
+        if (this.state.show == 'font-style') {
+            return (
+                <div class="edit-navbar edit-navbar-child" >
+                    <div>
+                        <a class="font-style" onclick={this.setting.bind(this)} href="javascript:;" title="blod">B</a>
+                        <a class="font-style" onclick={this.setting.bind(this)} href="javascript:;" title="underline">I</a>
+                        <a class="font-style" onclick={this.setting.bind(this)} href="javascript:;" title="italic">U</a>
+                    </div>
                 </div>
-            </div>
+            )
+        }
 
-        )
     }
     renderFont2() {
-        <div class="edit-navbar edit-navbar-child hide" id='font-size'>
-            <div>
-                <a class="font-style" href="javascript:;">小</a>
-                <a class="font-style" href="javascript:;">中</a>
-                <a class="font-style" href="javascript:;">大</a>
-            </div>
-        </div>
+        if (this.state.show == 'font-size') {
+            return (
+                <div class="edit-navbar edit-navbar-child" >
+                    <div>
+                        <a class="font-style" onclick={this.setting.bind(this)} href="javascript:;" href="javascript:;" title="fontsize" value="3">小</a>
+                        <a class="font-style" onclick={this.setting.bind(this)} href="javascript:;" href="javascript:;" title="fontsize" value="5">中</a>
+                        <a class="font-style" onclick={this.setting.bind(this)} href="javascript:;" href="javascript:;" title="fontsize" value="7">大</a>
+                    </div>
+                </div>
+            )
+        }
     }
     renderFontAlign() {
-        <div class="edit-navbar edit-navbar-child hide" id='font-align'>
-            <div>
-                <a class="font-style" href="javascript:;">左</a>
-                <a class="font-style" href="javascript:;">中</a>
-                <a class="font-style" href="javascript:;">右</a>
-            </div>
-        </div>
+        if (this.state.show == 'font-align') {
+            return (
+                <div class="edit-navbar edit-navbar-child" >
+                    <div>
+                        <a class="font-style" onclick={this.setting.bind(this)} href="javascript:;" href="javascript:;" title="justifyLeft">左</a>
+                        <a class="font-style" onclick={this.setting.bind(this)} href="javascript:;" href="javascript:;" title="justifyCenter">中</a>
+                        <a class="font-style" onclick={this.setting.bind(this)} href="javascript:;" href="javascript:;" title="justifyRight">右</a>
+                    </div>
+                </div>
+            )
+        }
     }
     renderFontColor() {
-        <div class="edit-navbar edit-navbar-child hide" id='font-color'>
-            <div>
-                <a class="font-style" href="javascript:;">黑</a>
-                <a class="font-style" href="javascript:;">红</a>
-                <a class="font-style" href="javascript:;">蓝</a>
-            </div>
-        </div>
+        if (this.state.show == 'font-color') {
+            return (
+                <div class="edit-navbar edit-navbar-child" >
+                    <div>
+                        <a class="font-style" onclick={this.setting.bind(this)} href="javascript:;" href="javascript:;" title="ForeColor" value="black">黑</a>
+                        <a class="font-style" onclick={this.setting.bind(this)} href="javascript:;" href="javascript:;" title="ForeColor" value="red">红</a>
+                        <a class="font-style" onclick={this.setting.bind(this)} href="javascript:;" href="javascript:;" title="ForeColor" value="blue">蓝</a>
+                    </div>
+                </div>
+            )
+        }
+
     }
     render() {
         return (
             <div>
-                <div class="edit-navbar" id="edit-navbar">
-                    <div>
-                        <a class="choose-all" href="javascript:;">全选</a>
-                        <a class="do-last" href="javascript:;"></a>
-                        <a class="do-next" href="javascript:;"></a>
-                    </div>
-                    <div>
-                        <a class="font1" onclick={this.showList} href="javascript:;"></a>
-                        <a class="font2" href="javascript:;"></a>
-                        <a class="font-align" href="javascript:;"></a>
-                        <a class="font-color" href="javascript:;"></a>
-                    </div>
-
-                </div>
-
-
-
-
-
+                {this.renderNavbar()}
+                {this.renderFont1()}
+                {this.renderFont2()}
+                {this.renderFontAlign()}
+                {this.renderFontColor()}
             </div>
 
         )
