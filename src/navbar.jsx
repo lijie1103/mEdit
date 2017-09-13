@@ -40,13 +40,6 @@ class Navbar extends React.Component {
     getVal() {
         console.log(this.refs.content.innerHTML);
     }
-
-    // handle(e) {
-    //     console.log(e.target.innerHTML);
-    //     this.setState({
-    //         html: e.target.innerHTML
-    //     })
-    // }
     renderNavbar() {
         if (!this.state.show) {
             return (

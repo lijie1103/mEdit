@@ -42,19 +42,20 @@
         <div id='edit-container'></div>
         <button onclick='javascript:showEdit();'>添加</button>
     </div>
-    <script src="./dist/js/index.min.js"></script>
+    <script src="./dist/js/mEdit.min.js"></script>
     <script>
         var elm = document.getElementById('edit-container')
-        function succFun() {
-            console.log('9999')
+        function succFun(html) {
+            console.log(html)
         }
         function cancelFun() {
 
         }
-        // var init = initMEdit(elm, succFun, cancelFun)
-        // function showEdit() {
-        //     document.getElementById('edit-bg').setAttribute('class', 'edit-bg show')
-        // }
+        function showEdit() {
+            document.getElementById('edit-bg').setAttribute('class', 'edit-bg show')
+        }
+        let val = '默认值'
+        mEdit.initMEdit(elm, val, succFun, cancelFun)
     </script>
 </body>
 

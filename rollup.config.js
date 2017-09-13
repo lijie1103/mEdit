@@ -8,9 +8,9 @@ export default {
     input: 'src/index.jsx',
     output: {
         format: 'iife',
-        file: 'dist/js/index.min.js',
+        file: 'dist/js/mEdit.min.js',
     },
-    name: 'preactWidget',
+    name: 'mEdit',
     sourceMap: false,
     treeshake: true,
     plugins: [
