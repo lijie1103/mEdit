@@ -40,10 +40,22 @@
 <body>
     <div id="content">
         <div id='edit-container'></div>
-        <button>添加</button>
+        <button onclick='javascript:showEdit();'>添加</button>
     </div>
     <script src="./dist/js/index.min.js"></script>
+    <script>
+        var elm = document.getElementById('edit-container')
+        function succFun() {
+            console.log('9999')
+        }
+        function cancelFun() {
 
+        }
+        // var init = initMEdit(elm, succFun, cancelFun)
+        // function showEdit() {
+        //     document.getElementById('edit-bg').setAttribute('class', 'edit-bg show')
+        // }
+    </script>
 </body>
 
 
