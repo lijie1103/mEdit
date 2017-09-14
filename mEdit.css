@@ -63,6 +63,19 @@
         /* opacity: 0; */
     }
 }
+.hide_bg{
+    animation:bg_hide 0.5s;
+    -webkit-animation:bg_hide .5s; /*Safari and Chrome*/
+    animation-fill-mode:forwards;
+}
+@keyframes bg_hide{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
 .edit-navbar{
     position: absolute;
     left: 0;
