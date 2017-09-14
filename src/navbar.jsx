@@ -4,7 +4,7 @@ class Navbar extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            show: 0,
+            show: this.props.navState ? this.props.navState : 0,
         }
     }
     //全选

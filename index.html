@@ -22,25 +22,26 @@
     #content {
         position: relative;
         height: 100%;
-        background: pink;
     }
 
-    button {
-        display: block;
+    .btn_add {
         position: fixed;
         bottom: 20px;
-        font-size: 30px;
-        color: #666;
         left: 50%;
         margin-left: -20px;
-        outline: none;
+        font-size: 16px;
+        color: #fff;
+        background: #57a7ff;
+        padding: 6px 14px;
+        border-radius: 4px;
+        cursor: pointer;
     }
 </style>
 
 <body>
     <div id="content">
         <div id='edit-container'></div>
-        <button onclick='javascript:showEdit();'>添加</button>
+        <a class='btn_add' onclick='javascript:showEdit();'>添加</a class='btn_add'>
     </div>
     <script src="./dist/js/mEdit.min.js"></script>
     <script>
