@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale = 1.0,user-scalable=no">
+    <title>test</title>
+</head>
+<link rel="stylesheet" href="./../mEdit.css">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+    }
+
+    #content {
+        position: relative;
+        height: 100%;
+    }
+
+    .btn_add {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        margin-left: -20px;
+        font-size: 16px;
+        color: #fff;
+        background: #57a7ff;
+        padding: 6px 14px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <div id="content">
+        <div id='edit-container'></div>
+        <a class='btn_add' onclick='javascript:showEdit();'>添加</a class='btn_add'>
+    </div>
+    <script src="./../dist/js/mEdit.min.js"></script>
+    <script>
+        var elm = document.getElementById('edit-container')
+        function succFun(html) {
+
+        }
+        function cancelFun() {
+
+        }
+        function showEdit() {
+            document.getElementById('edit-bg').setAttribute('class', 'edit-bg show')
+        }
+        let val = '默认值~'
+        mEdit.initMEdit(elm, val, succFun, cancelFun)
+    </script>
+</body>
+
+
+</html>
