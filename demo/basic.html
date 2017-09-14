@@ -52,7 +52,8 @@
 
         }
         function showEdit() {
-            document.getElementById('edit-bg').setAttribute('class', 'edit-bg show')
+            document.getElementById('edit-bg').setAttribute('class', 'edit-bg show');
+            document.getElementById('edit_inner').setAttribute('class', 'edit-container')
         }
         let val = ''
         mEdit.initMEdit(elm, val, succFun, cancelFun)
