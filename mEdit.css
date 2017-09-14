@@ -29,8 +29,8 @@
     left: 0;
     top: 0;
     height: 40%;
-    animation:upToDown 1s;
-    -webkit-animation:upToDown 1s; /*Safari and Chrome*/
+    animation:upToDown .5s;
+    -webkit-animation:upToDown .5s; /*Safari and Chrome*/
     animation-fill-mode:forwards;
 }
 @keyframes upToDown{
@@ -48,17 +48,19 @@
      left: 0;
      top: -40%;
      height: 40%;
-     animation:downToUp 1s;
-     -webkit-animation:downToUp 1s; /*Safari and Chrome*/
+     animation:downToUp 0.5s;
+     -webkit-animation:downToUp .5s; /*Safari and Chrome*/
      animation-fill-mode:forwards;
     
 }
 @keyframes downToUp{
     0%{
-        opacity: 1;
+        top: 0
+        /* opacity: 1; */
     }
     100%{
-        opacity: 0;
+        top: -40%;
+        /* opacity: 0; */
     }
 }
 .edit-navbar{
@@ -86,11 +88,11 @@
 }
 .edit-content{
     width: 100%;
-    height: 100%;
+    height: calc(100% - 60px);
     padding: 62px 10px;
     box-sizing: border-box;
+    overflow: scroll;
     outline: none;
-    resize: none;
 }
 .edit-footbar{
     position: absolute;
@@ -171,36 +173,37 @@
 }
 .font-style{
     font-size: 18px;
-    color: #666;
+    color: #bfbfbf;
     display: inline-block;
     margin: 0 12px;
-    width: 20px;
-    height: 20px;
+    width: 28px;
+    height: 28px;
     border-radius: 6px;
+    text-align: center;
 }
 .left{
     display: inline-block;
-    width: 20px;
-    height: 20px;
-    background: url("./src/images/icon4.png") no-repeat;
+    width: 28px;
+    height: 28px;
+    background: url("./src/images/icon4.png") no-repeat center;
     background-size: 20px 18px;
-    margin-left: 16px;
+    border-radius: 6px;
 }
 .center{
     display: inline-block;
-    width: 20px;
-    height: 20px;
-    background: url("./src/images/icon7.png") no-repeat;
+    width: 28px;
+    height: 28px;
+    background: url("./src/images/icon7.png") no-repeat center;
     background-size: 20px 18px;
-    margin-left: 16px;
+    border-radius: 6px;
 }
 .right{
     display: inline-block;
-    width: 20px;
-    height: 20px;
-    background: url("./src/images/icon8.png") no-repeat;
+    width: 28px;
+    height: 28px;
+    background: url("./src/images/icon8.png") no-repeat center;
     background-size: 20px 18px;
-    margin-left: 16px;
+    border-radius: 6px;
 }
 .black{
     background: #333333;
@@ -223,12 +226,20 @@
 .color7{
     background: #af53b9;
 }
-.s{font-size: 16px;}
+.s{font-size: 18px;}
 .m{font-size: 20px;}
-.l{font-size: 24px;}
+.l{font-size: 22px;}
 .hide{
     display: none;
 }
 .show{
     display: block;
+}
+.size{
+    display: block;
+    line-height: 28px;
+    border-radius: 6px;
+}
+.bg{
+    background-color: #57a7ff;
 }

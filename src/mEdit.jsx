@@ -19,7 +19,9 @@ class MEdit extends React.Component {
             val: deaultVal ? deaultVal : '',
             navState: 0,
         })
-        this.refs.edit_container.setAttribute('class', 'hide_edit')
+        this.refs.edit_container_1.setAttribute('class', 'hide_edit')
+        this.refs.container.setAttribute('class', 'edit-container hide_edit')
+
     }
     changeState() {
         let html = this.refs.content.innerHTML
@@ -28,16 +30,19 @@ class MEdit extends React.Component {
             val: html,
         })
     }
+    setting(command, b, val) {
+        document.execCommand(command, b, val);
+    }
     render() {
         let deaultVal = this.state.val
         let html = {
             __html: deaultVal
         }
         return (
-            <div class='hide fff' id='edit-bg' ref='edit_container'>
+            <div class='hide fff' id='edit-bg' ref='edit_container_1'>
                 <div class="edit-bg" onClick={this.changeState.bind(this)}></div>
-                <Navbar showState={this.state.navState} />
-                <div class="edit-container" >
+                <Navbar showState={this.state.navState} setting={this.setting.bind(this)} />
+                <div class="edit-container" id="edit_inner" ref='container'>
                     <div class="edit-content" ref='content' contenteditable="true"
                         dangerouslySetInnerHTML={html}>></div>
                     <div class="edit-footbar" onClick={this.changeState.bind(this)}>

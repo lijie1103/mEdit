@@ -21,16 +21,30 @@ class Navbar extends React.Component {
     }
     //设置样式
     setting(e) {
+        e.preventDefault();
+        e.stopPropagation();
         var command = e.target.getAttribute('title')
         var val = e.target.getAttribute('value')
+        let name = e.target.getAttribute('class')
+        if (name.indexOf('bg') > -1) {
+            let new_name = name.substring(0, name.length - 2)
+            e.target.setAttribute('class', new_name)
+        } else {
+
+            e.target.setAttribute('class', name + ' bg')
+        }
+
         if (!val) {
             val = null
         }
-        console.log(command, 'lll');
-        document.execCommand(command, false, val);
-        // this.setState({
-        //     show: 0
-        // })
+        this.props.setting(command, false, val)
+        let seft = this
+        setTimeout(function () {
+            seft.setState({
+                show: 0
+            })
+        }, 500)
+
     }
     showList(e) {
         e.preventDefault();
@@ -78,9 +92,9 @@ class Navbar extends React.Component {
             return (
                 <div class="edit-navbar edit-navbar-child" >
                     <div>
-                        <a class="font-style" onClick={this.setting.bind(this)} href="javascript:;" title="Bold">B</a>
-                        <a class="font-style" onClick={this.setting.bind(this)} href="javascript:;" title="italic">I</a>
-                        <a class="font-style" onClick={this.setting.bind(this)} href="javascript:;" title="underline">U</a>
+                        <a class="font-style" href="javascript:;"><span class='size' onClick={this.setting.bind(this)} title="Bold">B</span></a>
+                        <a class="font-style" href="javascript:;"><span class='size' onClick={this.setting.bind(this)} title="italic">I</span></a>
+                        <a class="font-style" href="javascript:;"><span class='size' onClick={this.setting.bind(this)} title="underline">U</span></a>
                     </div>
                 </div>
             )
@@ -92,9 +106,9 @@ class Navbar extends React.Component {
             return (
                 <div class="edit-navbar edit-navbar-child" >
                     <div>
-                        <a class="font-style s" onClick={this.setting.bind(this)} href="javascript:;" href="javascript:;" title="fontsize" value="3">A</a>
-                        <a class="font-style m" onClick={this.setting.bind(this)} href="javascript:;" href="javascript:;" title="fontsize" value="5">A</a>
-                        <a class="font-style l" onClick={this.setting.bind(this)} href="javascript:;" href="javascript:;" title="fontsize" value="7">A</a>
+                        <a class="font-style s" href="javascript:;"><span class='size' onClick={this.setting.bind(this)} title="fontsize" value="3">A</span></a>
+                        <a class="font-style m" href="javascript:;" ><span class='size' onClick={this.setting.bind(this)} title="fontsize" value="5">A</span></a>
+                        <a class="font-style l" href="javascript:;"><span class='size' onClick={this.setting.bind(this)} title="fontsize" value="7">A</span></a>
                     </div>
                 </div>
             )
@@ -106,11 +120,14 @@ class Navbar extends React.Component {
             return (
                 <div class="edit-navbar edit-navbar-child" >
                     <div>
-                        <a class="font-style left" onClick={this.setting.bind(this)} href="javascript:;" href="javascript:;" title="justifyLeft">
+                        <a class="font-style" href="javascript:;">
+                            <span class="left" onClick={this.setting.bind(this)} title="justifyLeft" ></span>
                         </a>
-                        <a class="font-style center" onClick={this.setting.bind(this)} href="javascript:;" href="javascript:;" title="justifyCenter">
+                        <a class="font-style " href="javascript:;">
+                            <span class="center" onClick={this.setting.bind(this)} title="justifyCenter" ></span>
                         </a>
-                        <a class="font-style right" onClick={this.setting.bind(this)} href="javascript:;" href="javascript:;" title="justifyRight">
+                        <a class="font-style " href="javascript:;">
+                            <span class="right" onClick={this.setting.bind(this)} title="justifyRight" ></span>
                         </a>
                     </div>
                 </div>
@@ -122,13 +139,13 @@ class Navbar extends React.Component {
             return (
                 <div class="edit-navbar edit-navbar-child" >
                     <div>
-                        <a class="black font-style" onClick={this.setting.bind(this)} href="javascript:;" href="javascript:;" title="ForeColor" value="#333"></a>
-                        <a class="color2 font-style" onClick={this.setting.bind(this)} href="javascript:;" href="javascript:;" title="ForeColor" value="#808080"></a>
-                        <a class="color3 font-style" onClick={this.setting.bind(this)} href="javascript:;" href="javascript:;" title="ForeColor" value="#ea271d"></a>
-                        <a class="color4 font-style" onClick={this.setting.bind(this)} href="javascript:;" href="javascript:;" title="ForeColor" value="#fd8a25"></a>
-                        <a class="color5 font-style" onClick={this.setting.bind(this)} href="javascript:;" href="javascript:;" title="ForeColor" value="#40b34f"></a>
-                        <a class="color6 font-style" onClick={this.setting.bind(this)} href="javascript:;" href="javascript:;" title="ForeColor" value="#1f69f6"></a>
-                        <a class="color7 font-style" onClick={this.setting.bind(this)} href="javascript:;" href="javascript:;" title="ForeColor" value="#af53b9"></a>
+                        <a class="black font-style" onClick={this.setting.bind(this)} href="javascript:;" title="ForeColor" value="#333"></a>
+                        <a class="color2 font-style" onClick={this.setting.bind(this)} href="javascript:;" title="ForeColor" value="#808080"></a>
+                        <a class="color3 font-style" onClick={this.setting.bind(this)} href="javascript:;" title="ForeColor" value="#ea271d"></a>
+                        <a class="color4 font-style" onClick={this.setting.bind(this)} href="javascript:;" title="ForeColor" value="#fd8a25"></a>
+                        <a class="color5 font-style" onClick={this.setting.bind(this)} href="javascript:;" title="ForeColor" value="#40b34f"></a>
+                        <a class="color6 font-style" onClick={this.setting.bind(this)} href="javascript:;" title="ForeColor" value="#1f69f6"></a>
+                        <a class="color7 font-style" onClick={this.setting.bind(this)} href="javascript:;" title="ForeColor" value="#af53b9"></a>
                     </div>
                 </div>
             )
