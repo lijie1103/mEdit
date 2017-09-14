@@ -47,7 +47,7 @@
     <script>
         var elm = document.getElementById('edit-container')
         function succFun(html) {
-            alert(html)
+
         }
         function cancelFun() {
 
@@ -56,7 +56,7 @@
             document.getElementById('edit-bg').setAttribute('class', 'edit-bg show');
             document.getElementById('edit_inner').setAttribute('class', 'edit-container')
         }
-        let val = ''
+        let val = '默认值~'
         mEdit.initMEdit(elm, val, succFun, cancelFun)
     </script>
 </body>
