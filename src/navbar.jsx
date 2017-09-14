@@ -26,10 +26,11 @@ class Navbar extends React.Component {
         if (!val) {
             val = null
         }
+        console.log(command, 'lll');
         document.execCommand(command, false, val);
-        this.setState({
-            show: 0
-        })
+        // this.setState({
+        //     show: 0
+        // })
     }
     showList(e) {
         e.preventDefault();
@@ -77,7 +78,7 @@ class Navbar extends React.Component {
             return (
                 <div class="edit-navbar edit-navbar-child" >
                     <div>
-                        <a class="font-style" onClick={this.setting.bind(this)} href="javascript:;" title="blod">B</a>
+                        <a class="font-style" onClick={this.setting.bind(this)} href="javascript:;" title="Bold">B</a>
                         <a class="font-style" onClick={this.setting.bind(this)} href="javascript:;" title="italic">I</a>
                         <a class="font-style" onClick={this.setting.bind(this)} href="javascript:;" title="underline">U</a>
                     </div>

@@ -19,7 +19,7 @@ class MEdit extends React.Component {
             val: deaultVal ? deaultVal : '',
             navState: 0,
         })
-        this.refs.edit_container.setAttribute('class', 'hide')
+        this.refs.edit_container.setAttribute('class', 'hide_edit')
     }
     changeState() {
         let html = this.refs.content.innerHTML
@@ -34,7 +34,7 @@ class MEdit extends React.Component {
             __html: deaultVal
         }
         return (
-            <div class='hide' id='edit-bg' ref='edit_container'>
+            <div class='hide fff' id='edit-bg' ref='edit_container'>
                 <div class="edit-bg" onClick={this.changeState.bind(this)}></div>
                 <Navbar showState={this.state.navState} />
                 <div class="edit-container" >
