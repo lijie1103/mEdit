@@ -38,15 +38,15 @@ export default {
                 'node_modules/preact/dist/preact.js': ['h', 'render', 'Component', 'cloneElement', 'options'],
             },
         }),
-        uglify({
-            compress: {
-                // screw_ie8: true,
-                warnings: false
-            },
-            output: {
-                comments: false
-            },
-            sourceMap: false,
-        }),
+        // uglify({
+        //     compress: {
+        //         // screw_ie8: true,
+        //         warnings: false
+        //     },
+        //     output: {
+        //         comments: false
+        //     },
+        //     sourceMap: false,
+        // }),
     ],
 };
