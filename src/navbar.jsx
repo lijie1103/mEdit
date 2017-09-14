@@ -4,7 +4,7 @@ class Navbar extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            show: this.props.navState ? this.props.navState : 0,
+            show: this.props.showState ? this.props.showState : 0,
         }
     }
     //全选
@@ -32,6 +32,8 @@ class Navbar extends React.Component {
         })
     }
     showList(e) {
+        e.preventDefault();
+        e.stopPropagation();
         let state = e.currentTarget.getAttribute('target')
         this.setState({
             show: state
@@ -39,6 +41,16 @@ class Navbar extends React.Component {
     }
     getVal() {
         console.log(this.refs.content.innerHTML);
+    }
+    changeShow(e) {
+        this.setState({
+            show: 0,
+        })
+    }
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            show: this.props.showstate,
+        })
     }
     renderNavbar() {
         if (!this.state.show) {
@@ -124,7 +136,7 @@ class Navbar extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div onClick={this.changeShow.bind(this)}>
                 {this.renderNavbar()}
                 {this.renderFont1()}
                 {this.renderFont2()}
