@@ -25,11 +25,11 @@
 ## 参数设置
 
 参数 | 默认值 | 是否必填 | 说明
-----|------|----
+----|------|----|----
 el | dom元素  | 必填 | 
-option | 对象 | 必填 |{val:'',succFun:function(){}}可渲染默认值,可接收回调
+option | 对象 | 必填 |{val:'',succFun:function(){}}val可渲染默认值,succFun可接收回调
 
-##demo
+## demo
 
 	  <!DOCTYPE html>
 		<html>
