@@ -8,7 +8,7 @@ export default {
     input: 'src/index.jsx',
     output: {
         format: 'iife',
-        file: 'dist/js/mEdit.min.js',
+        file: 'dist/mEdit.js',
     },
     name: 'mEdit',
     sourceMap: false,
