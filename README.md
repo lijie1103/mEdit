@@ -1,10 +1,10 @@
 ## mEdit
----
+
 一款适用于手机端的简单的富文本编辑器插件
 
 
 ## 使用方法（usage）
----
+
 1、dom结构
 
 	    <div id='edit-container'></div>
@@ -22,84 +22,18 @@
 
 	     mEdit.showEdit()
         
-## 参数设置
+## API
 
-参数 | 默认值 | 是否必填 | 说明
-----|------|----|----
+参数 | 默认值 | 是否必填 | 
+----|------|----|
 el | dom元素  | 必填 | 
-option | 对象 | 必填 |{val:'',succFun:function(){}}val可渲染默认值,succFun可接收回调
+options  | 对象 | 选填 |
+
+### options参数
+参数 | 类型 | 默认值| 说明
+----|------|----|----
+val | string | 空 | 可渲染默认值
+succFun  | function | 空|支持回调函数
 
 ## demo
-
-查看[demo]:./demo
-
-	  <!DOCTYPE html>
-		<html>
-
-		<head>
-    		<meta charset="utf-8">
-    		<meta name="viewport" content="width=device-width,initial-scale = 1.0,user-scalable=no">
-    		<title></title>
-		</head>
-		<link rel="stylesheet" href="./mEdit.css">
-		<style>
-    	* {
-       		 margin: 0;
-    	    	padding: 0;
-    }
-
-    	html,
-    	body {
-        	width: 100%;
-        	height: 100%;
-    	}
-
-    	#content {
-        	position: relative;
-        	height: 100%;
-    	}
-
-    	.btn_add {
-        	position: fixed;
-        	bottom: 20px;
-        	left: 50%;
-        	margin-left: -20px;
-        	font-size: 16px;
-        	color: #fff;
-        	background: #57a7ff;
-        	padding: 6px 14px;
-        	border-radius: 4px;
-        	cursor: pointer;
-    	}
-		</style>
-
-		<body>
-    	<div id="content">
-        	<div id='edit-container'></div>
-        	<a class='btn_add' onclick='javascript:showEdit();'>添加</a class='btn_add'>
-    	</div>
-    	<script src="./dist/js/mEdit.min.js"></script>
-    	<script>
-       		var el = document.getElementById('edit-container')
-        	mEdit.initMEdit(el,
-            {
-                val: '',
-                succFun: function (html) {
-                    console.log(html)
-                }
-            }
-        	)
-        	function showEdit() {
-            mEdit.showEdit()
-        	}
-    	</script>
-		</body>
-
-
-	</html>
-
-
-    
-
-
-
+查看 [demo](https://github.com/lijie1103/mEdit/tree/master/demo).
