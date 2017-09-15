@@ -3,7 +3,6 @@ import nodeResolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
 import uglify from 'rollup-plugin-uglify';
-
 export default {
     input: 'src/index.jsx',
     output: {
@@ -38,15 +37,15 @@ export default {
                 'node_modules/preact/dist/preact.js': ['h', 'render', 'Component', 'cloneElement', 'options'],
             },
         }),
-        // uglify({
-        //     compress: {
-        //         // screw_ie8: true,
-        //         warnings: false
-        //     },
-        //     output: {
-        //         comments: false
-        //     },
-        //     sourceMap: false,
-        // }),
+        uglify({
+            compress: {
+                // screw_ie8: true,
+                warnings: false
+            },
+            output: {
+                comments: false
+            },
+            sourceMap: false,
+        }),
     ],
 };

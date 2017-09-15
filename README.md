@@ -31,6 +31,8 @@ option | 对象 | 必填 |{val:'',succFun:function(){}}val可渲染默认值,suc
 
 ## demo
 
+查看[demo]:./demo
+
 	  <!DOCTYPE html>
 		<html>
 
