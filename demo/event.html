@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale = 1.0,user-scalable=no">
     <title>test</title>
 </head>
-<link rel="stylesheet" href="./../mEdit.css">
+<link rel="stylesheet" href="./../dist/mEdit.css">
 <style>
     * {
         margin: 0;
@@ -43,21 +43,13 @@
         <div id='edit-container'></div>
         <a class='btn_add' onclick='javascript:showEdit();'>添加</a class='btn_add'>
     </div>
-    <script src="./../dist/js/mEdit.min.js"></script>
+    <script src="./../dist/mEdit.min.js"></script>
     <script>
-        var elm = document.getElementById('edit-container')
-        function succFun(html) {
-            alert(html)
-        }
-        function cancelFun() {
-
-        }
+        var el = document.getElementById('edit-container')
+        mEdit.initMEdit(el,{succFun: function(html){ alert("成功获取HTML！")}})
         function showEdit() {
-            document.getElementById('edit-bg').setAttribute('class', 'edit-bg show');
-            document.getElementById('edit_inner').setAttribute('class', 'edit-container')
+            mEdit.showEdit()
         }
-        let val = ''
-        mEdit.initMEdit(elm, val, succFun, cancelFun)
     </script>
 </body>
 
