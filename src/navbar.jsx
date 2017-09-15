@@ -93,8 +93,8 @@ class Navbar extends React.Component {
                 <div class="edit-navbar edit-navbar-child" >
                     <div>
                         <a class="font-style" href="javascript:;"><span class='size' onClick={this.setting.bind(this)} title="Bold">B</span></a>
-                        <a class="font-style" href="javascript:;"><span class='size' onClick={this.setting.bind(this)} title="italic">I</span></a>
-                        <a class="font-style" href="javascript:;"><span class='size' onClick={this.setting.bind(this)} title="underline">U</span></a>
+                        <a class="font-style" href="javascript:;"><i class='size' onClick={this.setting.bind(this)} title="italic">I</i></a>
+                        <a class="font-style" href="javascript:;"><span class='size' onClick={this.setting.bind(this)} title="underline" style={{ 'textDecoration': 'underline' }}>U</span></a>
                     </div>
                 </div>
             )

@@ -1,3 +1,6 @@
+a{
+    text-decoration: none;
+}
 .edit-bg{
     position: fixed;
     left: 0;
@@ -219,25 +222,46 @@
     border-radius: 6px;
 }
 .black{
-    background: #333333;
+    background: #333333 !important;
+    width: 18px;
+    height: 18px;
+    margin: 0 4px;
 }
 .color2{
-    background: #808080;
+    background: #808080 !important;
+    width: 18px;
+    height: 18px;
+    margin: 0 4px;
 }
 .color3{
-    background: #ea271d;
+    background: #ea271d !important;
+    width: 18px;
+    height: 18px;
+    margin: 0 4px;
 }
 .color4{
-    background: #fd8a25;
+    background: #fd8a25 !important;
+    width: 18px;
+    height: 18px;
+    margin: 0 4px;
 }
 .color5{
-    background: #40b34f;
+    background: #40b34f !important;
+    width: 18px;
+    height: 18px;
+    margin: 0 4px;
 }
 .color6{
-    background: #1f69f6;
+    background: #1f69f6 !important;
+    width: 18px;
+    height: 18px;
+    margin: 0 4px;
 }
 .color7{
-    background: #af53b9;
+    background: #af53b9 !important;
+    width: 18px;
+    height: 18px;
+    margin: 0 4px;
 }
 .s{font-size: 18px;}
 .m{font-size: 20px;}

@@ -45,19 +45,20 @@
     </div>
     <script src="./dist/js/mEdit.min.js"></script>
     <script>
-        var elm = document.getElementById('edit-container')
-        function succFun(html) {
-            console.log(html)
-        }
-        function cancelFun() {
-
-        }
+        var el = document.getElementById('edit-container')
+        mEdit.initMEdit(el,
+            {
+                val: '',
+                succFun: function (html) {
+                    console.log(html)
+                }
+            }
+        )
         function showEdit() {
-            document.getElementById('edit-bg').setAttribute('class', 'show')
-            document.getElementById('edit_inner').setAttribute('class', 'edit-container')
+            mEdit.showEdit()
         }
-        let val = ''
-        mEdit.initMEdit(elm, val, succFun, cancelFun)
+
+
     </script>
 </body>
 
