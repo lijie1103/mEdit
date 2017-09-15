@@ -44,7 +44,7 @@ class MEdit extends React.Component {
                 <Navbar showState={this.state.navState} setting={this.setting.bind(this)} />
                 <div class="edit-container" id="edit_inner" ref='container'>
                     <div class="edit-content" ref='content' contenteditable="true"
-                        dangerouslySetInnerHTML={html}>></div>
+                        dangerouslySetInnerHTML={html}></div>
                     <div class="edit-footbar" onClick={this.changeState.bind(this)}>
                         <a class="btn-sure" href="javascript:;" onClick={this.getVal.bind(this)}>确定</a>
                     </div>
