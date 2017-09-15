@@ -144,7 +144,7 @@ a{
     display: inline-block;
     width: 20px;
     height:20px;
-    background: url("./src/images/icon1.png") no-repeat;
+    background: url("./src/images/m_edit_last.png") no-repeat;
     background-size: 20px 18px;
     margin: 0 16px;
       
@@ -153,21 +153,21 @@ a{
     display: inline-block;
     width: 20px;
     height: 20px;
-    background: url("./src/images/icon2.png") no-repeat;
+    background: url("./src/images/m_edit_next.png") no-repeat;
     background-size: 20px 18px;
 }
 .font1{
     display: inline-block;
     width: 20px;
     height: 20px;
-    background: url("./src/images/icon3.png") no-repeat;
+    background: url("./src/images/m_edit_b.png") no-repeat;
     background-size: 20px 20px;
 }
 .font2{
     display: inline-block;
     width: 20px;
     height: 20px;
-    background: url("./src/images/icon5.png") no-repeat;
+    background: url("./src/images/m_edit_size.png") no-repeat;
     background-size: 20px 18px;
     margin-left: 16px;
 }
@@ -175,7 +175,7 @@ a{
     display: inline-block;
     width: 20px;
     height: 20px;
-    background: url("./src/images/icon4.png") no-repeat;
+    background: url("./src/images/m_edit_left.png") no-repeat;
     background-size: 20px 18px;
     margin-left: 16px;
 }
@@ -183,7 +183,7 @@ a{
     display: inline-block;
     width: 20px;
     height: 20px;
-    background: url("./src/images/icon6.png") no-repeat;
+    background: url("./src/images/m_edit_color.png") no-repeat;
     background-size: 20px 18px;
     margin-left: 16px;
 }
@@ -201,7 +201,7 @@ a{
     display: inline-block;
     width: 28px;
     height: 28px;
-    background: url("./src/images/icon4.png") no-repeat center;
+    background: url("./src/images/m_edit_left.png") no-repeat center;
     background-size: 20px 18px;
     border-radius: 6px;
 }
@@ -209,7 +209,7 @@ a{
     display: inline-block;
     width: 28px;
     height: 28px;
-    background: url("./src/images/icon7.png") no-repeat center;
+    background: url("./src/images/m_edit_center.png") no-repeat center;
     background-size: 20px 18px;
     border-radius: 6px;
 }
@@ -217,7 +217,7 @@ a{
     display: inline-block;
     width: 28px;
     height: 28px;
-    background: url("./src/images/icon8.png") no-repeat center;
+    background: url("./src/images/m_edit_right.png") no-repeat center;
     background-size: 20px 18px;
     border-radius: 6px;
 }

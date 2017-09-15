@@ -39,7 +39,7 @@ class MEdit extends React.Component {
             __html: deaultVal
         }
         return (
-            <div class='hide' id='edit-bg' ref='edit_container_1'>
+            <div class='hide' id='m_edit_container' ref='edit_container_1'>
                 <div class="edit-bg" onClick={this.changeState.bind(this)}></div>
                 <Navbar showState={this.state.navState} setting={this.setting.bind(this)} />
                 <div class="edit-container" id="edit_inner" ref='container'>

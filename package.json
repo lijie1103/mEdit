@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "preact": "^8.2.5",
-    "preact-compat": "^3.17.0"
+    "preact-compat": "^3.17.0",
+    "rollup-plugin-postcss": "^0.5.5"
   }
 }
