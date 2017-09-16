@@ -46,7 +46,7 @@
     <script src="./../dist/mEdit.min.js"></script>
     <script>
         var el = document.getElementById('edit-container')
-        mEdit.initMEdit(el,{val: '默认值'})
+        mEdit.initMEdit(el, {val: '默认值', succFun:function (html) { }})
         function showEdit() {
             mEdit.showEdit()
         }
