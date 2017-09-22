@@ -1,29 +1,43 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import MEdit from './mEdit.jsx';
+import React from 'react'
+import { render } from 'react-dom'
+import MEditComponent from './mEdit.jsx';
 import merge from 'lodash/_mergeData.js'
-function initMEdit(el, options) {
-    let default_options = {
-        val: '',
-        succFun: function (html) { }
+
+class MEdit {
+    constructor(options) {
+        let default_options = {
+            val: '',
+            succFun: function (html) { }
+        }
+        let obj = {}
+        if (options) {
+            obj = merge(options, default_options)
+        } else {
+            obj = default_options
+        }
+        this.options = obj
     }
-    let obj = {}
-    if (options) {
-        obj = merge(options, default_options)
-    } else {
-        obj = default_options
+
+    showEdit() {
+        document.getElementById('m_edit_container').setAttribute('class', 'show')
+        document.getElementById('edit_inner').setAttribute('class', 'edit-container')
     }
-    ReactDOM.render(
-        <MEdit deaultVal={obj.val} onSucc={obj.succFun} />,
-        el
-    );
+
+    render(container) {
+        let node = null
+        container = container || this.options.container
+
+        if (!container) throw new Error(`Container is required: ${container}`)
+
+        if (!(container instanceof HTMLElement)) {
+            node = document.getElementById(container)
+            if (!node) throw new Error(`Container not found, document.getElementById: ${container}`)
+        } else {
+            node = container
+        }
+
+        return render(<MEditComponent deaultVal={this.options.val} onSucc={this.options.succFun} />, node)
+    }
 }
-function showEdit() {
-    document.getElementById('m_edit_container').setAttribute('class', 'show')
-    document.getElementById('edit_inner').setAttribute('class', 'edit-container')
-}
-export {
-    showEdit,
-    initMEdit,
-    MEdit
-}
+
+export default MEdit

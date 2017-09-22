@@ -45,8 +45,8 @@
     </div>
     <script src="./dist/mEdit.js"></script>
     <script>
-        var el = document.getElementById('edit-container')
-        mEdit.initMEdit(el)
+        var mEdit = new mEdit()
+        mEdit.render('edit-container')
         function showEdit() {
             mEdit.showEdit()
         }

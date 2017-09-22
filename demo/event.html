@@ -45,8 +45,15 @@
     </div>
     <script src="./../dist/mEdit.min.js"></script>
     <script>
-        var el = document.getElementById('edit-container')
-        mEdit.initMEdit(el,{succFun: function(html){ alert("成功获取HTML！")}})
+        var mEdit = new mEdit(
+            {
+                val: '默认值',
+                succFun: function (html) {
+                    console.log(html);
+                }
+            }
+        )
+        mEdit.render('edit-container')
         function showEdit() {
             mEdit.showEdit()
         }
