@@ -17,19 +17,13 @@
 	    
 3、初始化（init）
 
-	    mEdit.initMEdit(el, option)
+	    var mEdit = new mEdit(options)
+        mEdit.render('edit-container')
 4、控制遮罩层和编辑器显示的生效代码（调用showEdit()方法即可显示）
 
 	     mEdit.showEdit()
-        
-## API
 
-参数 | 默认值 | 是否必填 | 
-----|------|----|
-el | dom元素  | 必填 | 
-options  | 对象 | 选填 |
-
-### options参数
+## options参数
 参数 | 类型 | 默认值| 说明
 ----|------|----|----
 val | string | 空 | 可渲染默认值
